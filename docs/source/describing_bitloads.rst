@@ -18,7 +18,8 @@ is an integer.
 
 The following data types are supported:
 
-- 'str': raw bytestring or unicode string
+- 'str': string
+- 'bytes': raw bytestring
 - 'int': unsigned integer number
 - 'hex': hexadecimal representation of a number in string format
 - 'bool': boolean value
@@ -71,7 +72,7 @@ like this::
 .. note::
     The use of ``'user'`` type name is just an example. Any type that is not
     one of the types listed in this section can be used (i.e., any type other
-    than 'str', 'int', 'hex', 'bool', and 'pad').
+    than 'str', 'bytes', 'int', 'hex', 'bool', and 'pad').
 
 Two additional elements are the ``serializer`` and ``deserializer`` functions.
 

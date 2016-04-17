@@ -49,7 +49,7 @@ class Bitload(object):
 
     #: List of fields which have corresponding built-in (de)serializers in the
     #: :py:mod:`btl.utils` module.
-    BUILTINS = ['int', 'str', 'hex', 'bool']
+    BUILTINS = ['int', 'str', 'bytes', 'hex', 'bool']
 
     def __init__(self, description):
         self.description = description
