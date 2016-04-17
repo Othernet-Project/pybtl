@@ -66,7 +66,7 @@ bytes        ``bytes``                         ``bytes``
 -----------  --------------------------------  --------------------------------
 int          ``int`` (unsigned long long)      ``int`` (unsigned long long)
 -----------  --------------------------------  --------------------------------
-hex          ``bytes``, ``str`` (``unicode``)  ``bytes``
+hex          ``bytes``, ``str``/``unicode``    ``bytes``
              (hex number as a string)          (hex number as a string)
 -----------  --------------------------------  --------------------------------
 bool         any value                         ``bool``
