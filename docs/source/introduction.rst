@@ -22,7 +22,7 @@ away). ::
     >>> len('{"count":12,"id":"acbd18db4cc2f85cedef654fccc4a4d8"}') * 8
     416
 
-The MD5 hash alone will use twice as many bits as the entire binary datagram!
+The MD5 hash alone will use twice as many bits as the entire bitload!
 
 When we are dealing with networks with low availability and high bandwidth
 cost, transmitting small amounts of data quickly can mean the difference
