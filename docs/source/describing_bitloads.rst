@@ -14,7 +14,7 @@ Let's take a look at a simple example::
     ... )
 
 This example defines two fields, 'id', and 'count'. The 'id' field is a hex
-field and it's 128 bits long. The other field is 4 bits long and it's data type
+field and it's 128 bits long. The other field is 4 bits long and its data type
 is an integer.
 
 The following data types are supported:
