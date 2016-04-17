@@ -53,9 +53,9 @@ About the built-in types
 ------------------------
 
 The built-in types have conversion functions in the :py:mod:`~btl.utils`
-module. The functions use names that follow the ``'{:type}_to_bita'`` and
-``'bita_to_{:type}'``' format. The following table gives an overview of
-possible input (serializable) and output (deserialized) values:
+module. The functions use names that follow the ``'{type}_to_bita'`` and
+``'bita_to_{type}'``' format. The following table gives an overview of possible
+input (serializable) and output (deserialized) values:
 
 ===========  ================================  ================================
 type         inputs                            outputs
