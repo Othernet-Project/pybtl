@@ -26,7 +26,9 @@ The MD5 hash alone will use twice as many bits as the entire bitload!
 
 When we are dealing with networks with low availability and high bandwidth
 cost, transmitting small amounts of data quickly can mean the difference
-between successful and unsuccessful transmission.
+between successful and unsuccessful transmission. Smaller payload size means
+quicker transmission and more efficient use of the available bandwidth, and
+this is what bitloads do well.
 
 On the other hands, there are things bitloads are not very good at. In order to
 tightly pack the data, the length of each field in the bitload must be known in
