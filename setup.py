@@ -1,8 +1,6 @@
 import os
 from setuptools import setup, find_packages
 
-import btl as mod
-
 
 def read(fname):
         """ Return content of specified file """
@@ -14,8 +12,8 @@ setup(
     description=('Library for serializing python objects as tightly packed '
                  'bit arrays'),
     keywords='binary serialization deserialization bits',
-    version=mod.__version__,
-    author=mod.__author__,
+    version='1.0.dev1',
+    author='Outernet Inc',
     author_email='apps@outernet.is',
     license='BSD',
     url='https://github.com/Outernet-Project/pybtl',
