@@ -16,7 +16,7 @@ information.
 
 In comparison, assuming a JSON representation of a dict that has the 'id' and
 'count' keys, and using a string hexdigest and an integer number, we get a
-string that has typically uses around 440 bits (416 with whitespace stripped
+string that typically uses around 440 bits (416 with whitespace stripped
 away). ::
 
     >>> len('{"count":12,"id":"acbd18db4cc2f85cedef654fccc4a4d8"}') * 8
