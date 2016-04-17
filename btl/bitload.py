@@ -45,13 +45,18 @@ class Bitload(object):
         The object's :py:attr:`~Biload.length` property is *not* read-only, but
         you should not try to change its value unless you know exactly what you
         are doing.
+
+    By default, the length of the bitload is automatically padded to whole
+    bytes. To disable the padding, we can pass ``autopad=False`` to the
+    constructur, in which case the length of the bitload is a simple sum of
+    lengths of the fields (incuding 'pad' fields).
     """
 
     #: List of fields which have corresponding built-in (de)serializers in the
     #: :py:mod:`btl.utils` module.
     BUILTINS = ['int', 'str', 'bytes', 'hex', 'bool']
 
-    def __init__(self, description):
+    def __init__(self, description, autopad=True):
         self.description = description
         self.layout = OrderedDict({})
         self.length = 0
@@ -81,6 +86,8 @@ class Bitload(object):
                 serializer=serializer,
                 deserializer=deserializer)
             self.length += length
+        if autopad and self.length % 8:
+            self.length += 8 - (self.length % 8)
 
     def serialize(self, data):
         """
@@ -120,20 +127,26 @@ class Bitload(object):
         return data
 
 
-def serialize(description, data):
+def serialize(description, data, autopad=True):
     """
     Return a serialized bytestring using the specified bitload description and
     data. This is a shortcut for instantiating a :py:class:`Bitload` object and
     calling its :py:meth:`~Bitload.serialize` method.
+
+    The ``autopad`` argument can be used to automatically pad the bitload to
+    whole bytes.
     """
-    return Bitload(description).serialize(data)
+    return Bitload(description, autopad).serialize(data)
 
 
-def deserialize(description, bitload):
+def deserialize(description, bitload, padded=True):
     """
     Return an :py:class:`~collections.OrderedDict` object using the specified
     bitload description and bitload. This is a shortcut for instantiating a
     :py:class:`Bitload` object and calling its :py:meth:`~Bitload.deserialize`
     method.
+
+    The ``padded`` argument is used to specify whether the incoming bitload
+    has been padded to whole bytes.
     """
-    return Bitload(description).deserialize(bitload)
+    return Bitload(description, padded).deserialize(bitload)

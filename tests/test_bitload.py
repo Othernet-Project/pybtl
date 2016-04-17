@@ -14,7 +14,7 @@ def test_init_creates_layout():
         ('id', 'int', 16),
         ('done', 'bool'),
         ('user', 'str', 20 * 8),
-        (None, 'pad', 5),
+        (None, 'pad', 3),
         ('time', 'user', 12, serializer, deserializer)
     )
     bl = mod.Bitload(msgfmt)
@@ -33,12 +33,27 @@ def test_init_creates_layout():
     assert bl.layout['user'].length == 160
     assert bl.layout['user'].serializer == utils.str_to_bita
     assert bl.layout['user'].deserializer == utils.bita_to_str
-    assert bl.layout['time'].start == 182
-    assert bl.layout['time'].end == 194
+    assert bl.layout['time'].start == 180
+    assert bl.layout['time'].end == 192
     assert bl.layout['time'].length == 12
     assert bl.layout['time'].serializer == serializer
     assert bl.layout['time'].deserializer == deserializer
-    assert bl.length == 194
+    assert bl.length == 192
+
+
+def test_autopad():
+    serializer = lambda x: x
+    deserializer = lambda x: x
+    msgfmt = (
+        ('id', 'int', 16),
+        ('done', 'bool'),
+        ('user', 'str', 20 * 8),
+        ('time', 'user', 12, serializer, deserializer)
+    )
+    bl = mod.Bitload(msgfmt)
+    assert bl.length == 192
+    bl = mod.Bitload(msgfmt, autopad=False)
+    assert bl.length == 189
 
 
 def test_serialization():
