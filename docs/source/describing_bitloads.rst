@@ -49,6 +49,36 @@ make sure the source data will fit the bitload field, so you may get unexpected
 results if you are no careful (e.g., inserting a 10-bit integer into a 4-bit
 field will yield the wrong value after deserialization).
 
+About the built-in types
+------------------------
+
+The built-in types have conversion functions in the :py:mod:`~btl.utils`
+module. The functions use names that follow the ``'{:type}_to_bita'`` and
+``'bita_to_{:type}'``' format. The following table gives an overview of
+possible input (serializable) and output (deserialized) values:
+
+===========  ================================  ================================
+type         inputs                            outputs
+===========  ================================  ================================
+str          ``bytes``, ``str``/``unicode``    ``str``/``unicode``
+-----------  --------------------------------  --------------------------------
+bytes        ``bytes``                         ``bytes``
+-----------  --------------------------------  --------------------------------
+int          ``int`` (unsigned)                ``int`` (unsigned)
+-----------  --------------------------------  --------------------------------
+hex          ``bytes``, ``str`` (``unicode``)  ``bytes``
+             (hex number as a string)          (hex number as a string)
+-----------  --------------------------------  --------------------------------
+bool         any value                         ``bool``
+             (coerced using :py:func:`bool`)
+-----------  --------------------------------  --------------------------------
+pad          n/a                               n/a
+===========  ================================  ================================
+
+.. note::
+    All unicode strings are stored as UTF-8.
+
+
 Dealing with other types of data
 --------------------------------
 
