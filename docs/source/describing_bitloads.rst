@@ -2,7 +2,7 @@ Describing binary bitload fields
 ================================
 
 Each bitload is a sequence of simple python values (numbers, bytestrings,
-booleans) in binary format. The slots in which each of this values fit are
+booleans) in binary format. The slots in which each of the values fit are
 caled 'fields'. Each field is associated with a name, data type, and, in most
 cases, length of the field in bits.
 
