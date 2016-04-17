@@ -12,7 +12,7 @@ setup(
     description=('Library for serializing python objects as tightly packed '
                  'bit arrays'),
     keywords='binary serialization deserialization bits',
-    version='1.0.dev2',
+    version='1.0.dev3',
     author='Outernet Inc',
     author_email='apps@outernet.is',
     license='BSD',
