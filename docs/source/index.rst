@@ -27,12 +27,14 @@ purpose. :)
 Source code
 ===========
 
-TODO
+The source code is available `on GitHub
+<https://github.com/Outernet-Project/pybtl>`_
 
 License
 =======
 
-TODO
+pybtl is licensed under BSD license. Please see the ``LICENSE`` file in the
+source tree for more information.
 
 Documentation
 =============
