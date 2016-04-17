@@ -1,0 +1,7 @@
+*.py[co]
+*.sw[op]
+/.tox
+/.cache
+/dist
+/docs/build
+/*.egg-info
